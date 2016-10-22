@@ -1,0 +1,4 @@
+name: RxBukkit
+main: rx.bukkit.RxJavaPlugin
+version: 1.0
+author: rmichela
