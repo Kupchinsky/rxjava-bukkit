@@ -11,30 +11,26 @@
 
     <artifactId>rxjava-bukkit</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.netflix.rxjava</groupId>
-            <artifactId>rxjava-core</artifactId>
-            <version>0.19.2</version>
-            <scope>provided</scope>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>craftbukkit</artifactId>
-            <version>1.7.9-R0.2</version>
-            <scope>provided</scope>
-            <type>jar</type>
-        </dependency>
-    </dependencies>
-
-    <!-- Repositories -->
     <repositories>
         <repository>
-            <id>bukkit-repo</id>
-            <url>http://repo.bukkit.org/content/groups/public/</url>
+            <id>atisot_maven</id>
+            <url>file://${project.basedir}/../Maven</url>
         </repository>
     </repositories>
+
+    <dependencies>
+		<dependency>
+			<groupId>io.reactivex</groupId>
+			<artifactId>rxjava</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>ru.atisot</groupId>
+			<artifactId>kcauldron-srg</artifactId>
+			<version>1.7.10-custom-3</version>
+			<scope>provided</scope>
+		</dependency>
+    </dependencies>
 
     <!-- Build -->
     <build>

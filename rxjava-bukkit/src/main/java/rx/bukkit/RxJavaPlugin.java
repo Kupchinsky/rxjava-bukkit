@@ -5,9 +5,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import rx.Scheduler;
 import rx.bukkit.scheduler.BukkitRxScheduler;
 import rx.bukkit.task.TaskFactory;
-import rx.plugins.RxJavaDefaultSchedulers;
 import rx.plugins.RxJavaErrorHandler;
 import rx.plugins.RxJavaPlugins;
+import rx.plugins.RxJavaSchedulersHook;
 
 import java.util.logging.Level;
 
@@ -26,7 +26,7 @@ public class RxJavaPlugin extends JavaPlugin {
             }
         });
         // Register global schedulers
-        RxJavaPlugins.getInstance().registerDefaultSchedulers(new RxJavaDefaultSchedulers() {
+        RxJavaPlugins.getInstance().registerSchedulersHook(new RxJavaSchedulersHook() {
             @Override
             public Scheduler getComputationScheduler() {
                 return BukkitRxScheduler.forPlugin(plugin, BukkitRxScheduler.ConcurrencyMode.SYNCHRONOUS);
